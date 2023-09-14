@@ -1,0 +1,10 @@
+.discount-badge {
+    margin: 12px;
+    padding: 0 14px;
+
+    font-size: 14px;
+    color: white;
+    background-color: #000;
+    
+    text-align: center;
+}

@@ -1,0 +1,20 @@
+.cart-widget {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.carl-widget-svg {
+    z-index: 2;
+}
+
+.cart-item-count {
+    position: absolute;
+    z-index: 1;
+    top: -10px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 4px 8px;
+}

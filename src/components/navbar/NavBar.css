@@ -1,0 +1,118 @@
+.mi-navbar {
+    padding: 0;
+
+    background-color: lightgray;
+
+    min-height: 3rem;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+
+  }
+  
+  .mi-menu-toggle {
+    padding: 17px 14px;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid #000; 
+  }
+  
+  .mi-menu-icon {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+  }
+  
+  .mi-title {
+    padding: 11.25px;
+
+    font-size: 20px;
+    font-weight: bold;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+  }
+
+  .mi-carlwidget {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 11px;
+    border: 1px solid #000;
+  }
+    
+  .nav-links {
+    background-color: white;
+
+    width: 100%;
+    padding-top: 32px;
+
+    position: absolute;
+    top: 48px;
+    left: 0;
+
+    display: none;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
+
+    height: 0; 
+    overflow: hidden;
+    transition: height 0.3s ease; 
+
+  }
+
+  .mi-nav-link {
+    margin: 2px;
+    padding: 10px;
+
+    font-size: 16px;
+    text-decoration: none;
+    color: #000;
+
+    display: flex;
+
+  }
+
+  .nav-link1 {
+    padding-bottom: 72px;
+  }
+
+  .pre-order-exclusive {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .show-menu {
+    display: flex;
+    height: auto;
+  }
+  
