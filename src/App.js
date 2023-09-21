@@ -1,6 +1,7 @@
 import NavBar from  './components/navbar/NavBar'
 import ItemListContainer from './components/itemlistcontainer/ItemListContainer';
 
+console.log()
 
 function App() {
   return (
