@@ -3,26 +3,13 @@ import './NavBar.css'
 import CarlWidget from '../carlwidget/CarlWidget';
 import HamburgerIcon from '../hamburgericon/HamburgerIcon';
 import DiscountBadge from '../discountbadge/DiscountBadge';
-import CartActions from '../cartactions/CartActions';
 
 
-function NavBar() {
+function NavBar({cartItems}) {
   const [menuVisible, setMenuVisible] = useState(false);
 
   const toggleMenu = () => {
     setMenuVisible(!menuVisible);
-  };
-
-  const [cartItems, setCartItems] = useState(0);
-
-  const addToCart = () => {
-    setCartItems(cartItems + 1)
-  };
-
-  const removeFromCart = () => {
-    if (cartItems > 0) {
-      setCartItems(cartItems - 1)
-    }
   };
 
   return (
@@ -46,8 +33,6 @@ function NavBar() {
       <div className='mi-carlwidget'>
       <CarlWidget cartItems={cartItems}/>
       </div>
-      <CartActions cartItems={cartItems} addToCart={addToCart} removeFromCart={removeFromCart} />
-      {console.log(cartItems)}
     </div>
   );
 }
