@@ -11,9 +11,7 @@ const Card = ({
     stock, 
     cartItems, 
     setCartItems,
-    updateRemainingStock,
-    addToCart,
-    removeFromCart
+    updateRemainingStock
     }) => {
         const [quantity, setQuantity] = useState(1); // Valor inicial: 1
         const [addedToCart, setAddedToCart] = useState(false);
@@ -25,44 +23,24 @@ const Card = ({
         setQuantity(newQuantity);
     };
 
-    const handleAddToCart = () => {
+    const addToCart = () => {
         if (quantity > 0 && quantity <= stock) {
-          addToCart(quantity); // Llama a la función pasando la cantidad
           const newStock = stock - quantity;
-          updateRemainingStock(id, newStock);
+          updateRemainingStock(id, newStock); // Pasa el 'id' del producto
           setCartItems(cartItems + quantity);
           setAddedToCart(true);
         }
       };
     
-      const handleRemoveFromCart = () => {
+      const removeFromCart = () => {
         if (cartItems > 0) {
-          removeFromCart(quantity); // Llama a la función pasando la cantidad
+          setCartItems(cartItems - quantity);
           const newStock = stock + quantity;
-          updateRemainingStock(id, newStock);
-          setQuantity(1);
-          setAddedToCart(false);
+          updateRemainingStock(id, newStock); // Pasa el 'id' del producto
+          setQuantity(1); // Restablece la cantidad a 1 al quitar del carrito
+          setAddedToCart(false)
         }
       };
-
-    // const addToCart = () => {
-    //     if (quantity > 0 && quantity <= stock) {
-    //       const newStock = stock - quantity;
-    //       updateRemainingStock(id, newStock); // Pasa el 'id' del producto
-    //       setCartItems(cartItems + quantity);
-    //       setAddedToCart(true);
-    //     }
-    //   };
-    
-    //   const removeFromCart = () => {
-    //     if (cartItems > 0) {
-    //       setCartItems(cartItems - quantity);
-    //       const newStock = stock + quantity;
-    //       updateRemainingStock(id, newStock); // Pasa el 'id' del producto
-    //       setQuantity(1); // Restablece la cantidad a 1 al quitar del carrito
-    //       setAddedToCart(false)
-    //     }
-    //   };
 
         useEffect(() => {
         if (stock === 0) {
@@ -96,8 +74,8 @@ const Card = ({
 
                 <CartActions 
                     cartItems={cartItems}
-                    addToCart={handleAddToCart} 
-                    removeFromCart={handleRemoveFromCart} 
+                    addToCart={addToCart} 
+                    removeFromCart={removeFromCart} 
                     showRemoveButton={addedToCart} // Pasa el estado para mostrar/ocultar el botón de quitar
                 />
             </div>

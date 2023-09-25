@@ -4,20 +4,11 @@
 import NavBar from  './components/navbar/NavBar'
 import ItemListContainer from './components/itemlistcontainer/ItemListContainer';
 import { useState } from 'react';
+import HomePage from './components/homepage/HomePage';
 
 
 function App() {
   const [cartItems, setCartItems] = useState(0);
-
-  const addToCart = (quantity) => {
-    setCartItems(cartItems + quantity);
-  };
-
-  const removeFromCart = (quantity) => {
-    if (cartItems >= quantity) {
-      setCartItems(cartItems - quantity);
-    }
-  };
 
   
 
@@ -26,12 +17,11 @@ function App() {
       <NavBar 
       cartItems={cartItems} 
       />
+      <HomePage/>
       <ItemListContainer 
       cartItems={cartItems}
       setCartItems={setCartItems}
       mensaje="Productos"
-      addToCart={(quantity) => addToCart(quantity)}
-      removeFromCart={(quantity) => removeFromCart(quantity)}
       />
     </div>
   );

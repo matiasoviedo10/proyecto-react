@@ -4,8 +4,6 @@ import Card from '../card/Card'
 import { useState } from 'react'
 
 const ItemListContainer = ({
-  removeFromCart,
-  addToCart,
   cartItems,
   setCartItems,
   mensaje
@@ -65,8 +63,6 @@ const ItemListContainer = ({
         stock={remainingStocks[index].currentStock} // Pasar el stock restante
         cartItems={cartItems} 
         setCartItems={setCartItems}
-        removeFromCart={removeFromCart}
-        addToCart={addToCart}
         updateRemainingStock={updateRemainingStock} // Pasa la función para actualizar el stock restante
         />
       ))}
