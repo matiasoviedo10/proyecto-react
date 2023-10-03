@@ -60,10 +60,10 @@ const ItemListContainer = ({
         title={product.title}
         description={product.description}
         price={product.price}
-        stock={remainingStocks[index].currentStock} // Pasar el stock restante
+        stock={remainingStocks[index].currentStock} 
         cartItems={cartItems} 
         setCartItems={setCartItems}
-        updateRemainingStock={updateRemainingStock} // Pasa la función para actualizar el stock restante
+        updateRemainingStock={updateRemainingStock} 
         />
       ))}
       

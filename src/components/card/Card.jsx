@@ -13,7 +13,7 @@ const Card = ({
     setCartItems,
     updateRemainingStock
     }) => {
-        const [quantity, setQuantity] = useState(1); // Valor inicial: 1
+        const [quantity, setQuantity] = useState(1); 
         const [addedToCart, setAddedToCart] = useState(false);
 
 
@@ -26,7 +26,7 @@ const Card = ({
     const addToCart = () => {
         if (quantity > 0 && quantity <= stock) {
           const newStock = stock - quantity;
-          updateRemainingStock(id, newStock); // Pasa el 'id' del producto
+          updateRemainingStock(id, newStock); 
           setCartItems(cartItems + quantity);
           setAddedToCart(true);
         }
@@ -36,8 +36,8 @@ const Card = ({
         if (cartItems > 0) {
           setCartItems(cartItems - quantity);
           const newStock = stock + quantity;
-          updateRemainingStock(id, newStock); // Pasa el 'id' del producto
-          setQuantity(1); // Restablece la cantidad a 1 al quitar del carrito
+          updateRemainingStock(id, newStock); 
+          setQuantity(1); 
           setAddedToCart(false)
         }
       };
@@ -46,7 +46,7 @@ const Card = ({
         if (stock === 0) {
             setQuantity(0);
         } else {
-            setQuantity((q) => Math.min(1, q)); // Utiliza una actualización funcional
+            setQuantity((q) => Math.min(1, q)); 
         }
         }, [stock]);
     
@@ -76,7 +76,7 @@ const Card = ({
                     cartItems={cartItems}
                     addToCart={addToCart} 
                     removeFromCart={removeFromCart} 
-                    showRemoveButton={addedToCart} // Pasa el estado para mostrar/ocultar el botón de quitar
+                    showRemoveButton={addedToCart}
                 />
             </div>
         </div>

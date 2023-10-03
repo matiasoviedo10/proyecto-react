@@ -17,7 +17,6 @@ const ListProducts = () => {
         <div className='products-list'>
             {productsData.map((product) => (
                 <Link to={`/poducts/${product.id}`} className='products' key={product.id}>
-                    {console.log(product.id)}
                 <img className='image-products' src={product.image} alt={product.name} />
                     <p>{product.name}</p>
                     <div className="price-addCart">
