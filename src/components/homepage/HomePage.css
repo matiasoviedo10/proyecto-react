@@ -1,0 +1,13 @@
+.home-page {
+    max-width: 425px;
+    height: 700px;
+
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+
+}
+
+.home-page-img {
+    width: 100%;
+}

@@ -1,0 +1,27 @@
+.banner-store {
+    width: 100%;
+
+    color: white;
+
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    z-index: 1;
+}
+
+.tittle-store {
+    width: 100%;
+
+    position: absolute;
+    z-index: 2;
+}
+
+.image-store {
+    width: 100%;
+    min-height: 420px;
+
+}

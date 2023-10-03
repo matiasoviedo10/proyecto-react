@@ -1,8 +1,12 @@
-import React, { useState } from 'react';
 import './NavBar.css'
-import CarlWidget from '../carlwidget/CarlWidget';
+
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+
 import HamburgerIcon from '../hamburgericon/HamburgerIcon';
 import DiscountBadge from '../discountbadge/DiscountBadge';
+import CarlWidget from '../carlwidget/CarlWidget';
+import SiteTitle from '../brand/sitetitle/SiteTitle';
 
 
 function NavBar({cartItems}) {
@@ -12,6 +16,10 @@ function NavBar({cartItems}) {
     setMenuVisible(!menuVisible);
   };
 
+  const closeMenu = () => {
+    setMenuVisible(false);
+  };
+
   return (
     <div className="mi-navbar">
       <div className="mi-menu-toggle">
@@ -19,19 +27,37 @@ function NavBar({cartItems}) {
           <HamburgerIcon/>
         </div>
         <div className={`nav-links ${menuVisible ? 'show-menu' : ''}`}>
+
+          <Link className='link-route' to={'/'} onClick={closeMenu}>
+            <h2 className="mi-nav-link">Home</h2>
+          </Link>
+
           <div className='pre-order-exclusive'>
-          <a href="../public/index.html" className="mi-nav-link">New in</a>
+          <Link className='link-route' to={'/products'} onClick={closeMenu}>
+            <h2 className="mi-nav-link">Products</h2>
+          </Link>
           <DiscountBadge/>
           </div>
-          <a href="./NavBar.jsx"className="mi-nav-link">Best sellers</a>
-          <a href="./NavBar.jsx" className="mi-nav-link nav-link1">Ready to ship</a>
+
+          <Link className='link-route' to={'/contact'} onClick={closeMenu}>
+            <h2 className="mi-nav-link nav-link1">Contact</h2>
+          </Link>
+
           <a href="./NavBar.jsx" className="mi-nav-link">Profile</a>
           <a href="./NavBar.jsx" className="mi-nav-link nav-link1">About us</a>
+
         </div>
       </div>
-      <div className="mi-title">LORENZO RICCI</div>
+      
+      <Link className="mi-title" to={"/"} onClick={closeMenu}>
+      <SiteTitle/>
+      </Link>
+      
       <div className='mi-carlwidget'>
+      <Link to={'/cart'} onClick={closeMenu}>
       <CarlWidget cartItems={cartItems}/>
+      </Link>
+
       </div>
     </div>
   );

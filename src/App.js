@@ -1,10 +1,13 @@
+import NavBar from '/Users/MatiasOviedo/Desktop/react/proyecto-react/src/components/navbar/NavBar.jsx'
 
-
-
-import NavBar from  './components/navbar/NavBar'
-import ItemListContainer from './components/itemlistcontainer/ItemListContainer';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
-import HomePage from './components/homepage/HomePage';
+
+import Home from './pages/home/Home';
+import Cart from './pages/cart/Cart';
+import Contact from './pages/contact/Contact';
+import ProductDetail from './components/productdetail/ProductDetail';
+import Products from './pages/products/Products';
 
 
 function App() {
@@ -13,17 +16,19 @@ function App() {
   
 
   return (
-    <div>
+    <BrowserRouter>
       <NavBar 
       cartItems={cartItems} 
       />
-      <HomePage/>
-      <ItemListContainer 
-      cartItems={cartItems}
-      setCartItems={setCartItems}
-      mensaje="Productos"
-      />
-    </div>
+      <Routes>
+        <Route path='/' element={<Home/>} />
+        <Route path='/cart' element={<Cart/>} />
+        <Route path='/products' element={<Products/>} />
+        <Route path='/products/:id' element={<ProductDetail/>} />
+        <Route path='/contact' element={<Contact/>} />
+      </Routes>
+
+    </BrowserRouter>
   );
 }
 

@@ -1,8 +1,8 @@
 .mi-navbar {
     padding: 0;
 
-    background-color: lightgray;
-
+    background-color: white;
+    
     min-height: 3rem;
 
     display: flex;
@@ -15,6 +15,7 @@
   
   .mi-menu-toggle {
     padding: 17px 14px;
+    border: 1px solid #000; 
 
     display: flex;
     flex-direction: column;
@@ -22,7 +23,6 @@
     justify-content: center;
     align-items: center;
 
-    border: 1px solid #000; 
   }
   
   .mi-menu-icon {
@@ -36,10 +36,8 @@
   }
   
   .mi-title {
-    padding: 11.25px;
+    padding: 13.3px;
 
-    font-size: 20px;
-    font-weight: bold;
     border-top: 1px solid #000;
     border-bottom: 1px solid #000;
     
@@ -49,7 +47,10 @@
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
+
     text-align: center;
+    text-decoration: none;
+    color: black;
     
   }
 
@@ -67,6 +68,7 @@
     background-color: white;
 
     width: 100%;
+
     padding-top: 32px;
 
     position: absolute;
@@ -76,6 +78,7 @@
     display: none;
     flex-direction: column;
     flex-wrap: nowrap;
+    flex: auto;
     justify-content: flex-start;
     align-items: flex-start;
 
@@ -90,7 +93,6 @@
     padding: 10px;
 
     font-size: 16px;
-    text-decoration: none;
     color: #000;
 
     display: flex;
@@ -113,6 +115,11 @@
   
   .show-menu {
     display: flex;
-    min-height: 744px;
+    height: 100vh;
+
+
   }
   
+  .link-route {
+    text-decoration: none;
+  }
