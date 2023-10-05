@@ -1,29 +1,61 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { productsData } from '../../data/ProductsData';
+import { getProductById } from '../../data/ProductsData';
 
-const ProductDetail = () => {
-    const {id} = useParams();
-    const productId = parseInt(id);
+import './ProductDetail.css'
 
-    if (isNaN(productId)) {
-    // Manejar el caso cuando id no es un número válido
-    console.error("El id no es un número válido");
-    return <div>Error: Producto no encontrado</div>;
+const ProductDetail = ({addToCart}) => {
+    const { productId } = useParams();
+    const [quantity, setQuantity] = useState(1);
+    const [selectedSize, setSelectedSize] = useState(39)
+
+    const productIdNumber = +productId;
+
+    const product = getProductById (productIdNumber)
+
+    const increaseQuantity = () => {
+        setQuantity(quantity + 1);
+    };
+
+    const decreaseQuantity = () => {
+        if (quantity > 1) {
+            setQuantity(quantity - 1);
+        }
+    };
+
+    const handleSizeClick = (size) => {
+        setSelectedSize(size);
+    };
+
+    const handleAddToCart = () => {
+        addToCart(productIdNumber, quantity, selectedSize)
     }
 
-    const product = productsData.find((p) => p.id === productId);
-
     if (!product) {
-        // Manejar el caso cuando no se encuentra el producto
-        console.error("Producto no encontrado");
-        return <div>Error: Producto no encontrado</div>;
+        return <div>Producto no encontrado</div>;
     }
 
     return (    
         <div>
-            {/* <img src={product.image} alt={product.name}></img> */}
+            <img className='image-product' src={product.image} alt={product.name}/>
             <h2>{product.name}</h2>
+            <span>${product.price}</span>
+            <ul>
+                {product.sizes.map((size) => (
+                    <li key={size} onClick={() => handleSizeClick(size)} className={selectedSize === size ? 'selected' : ''}>
+                        {size}
+                    </li>
+                ))}
+            </ul>
+            <p>Colore:{product.colore}</p>
+            <div className="quantity-selector">
+                <button onClick={decreaseQuantity}>-</button>
+                <input type="number" value={quantity} readOnly />
+                <button onClick={increaseQuantity}>+</button>
+            </div>
+            <div>
+                <button onClick={handleAddToCart}>Add to Cart</button>
+            </div>
         </div>
     )
 }

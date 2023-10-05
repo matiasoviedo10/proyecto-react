@@ -58,4 +58,8 @@ export const productsData = [
         lining: "Leather",
         gender: "male",
     }
-]
+];
+
+export function getProductById (id){
+return productsData.find((product) => product.id === id)
+};

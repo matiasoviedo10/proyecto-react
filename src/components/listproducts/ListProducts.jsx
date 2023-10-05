@@ -4,12 +4,15 @@ import './ListProducts.css'
 import { productsData } from '../../data/ProductsData'
 import { Link } from 'react-router-dom'
 
-const ListProducts = () => {
-    const [selectedSize, setSelectedSize] = useState(null);
+const ListProducts = ({addToCart}) => {
+    const [selectedSize, setSelectedSize] = useState(39);
 
     const handleSizeChange = (event) => {
         setSelectedSize(event.target.value);
-        
+    };
+
+    const handleAddToCart = (productId, selectedSize) => {
+        addToCart(productId, 1, selectedSize);
     };
 
     
@@ -17,13 +20,9 @@ const ListProducts = () => {
         <div className='products-list'>
             {productsData.map((product) => (
                 <Link to={`/poducts/${product.id}`} className='products' key={product.id}>
-                <img className='image-products' src={product.image} alt={product.name} />
+                    <img className='image-products' src={product.image} alt={product.name} />
                     <p>{product.name}</p>
-                    <div className="price-addCart">
-                    <p>${product.price}</p>
-                    <button onClick={""}>Add to Cart</button>
-                    </div>
-
+                    
                     <div className="sizes-select">
                         <label className='label-select'>
                             <p>Sizes:</p>
@@ -40,7 +39,12 @@ const ListProducts = () => {
                         </label>
                     </div>
 
-                </Link>
+                    <div className="price-addCart">
+                    <p>${product.price}</p>
+                    <button onClick={() => handleAddToCart(product.id, selectedSize)}>Add to Cart</button>
+                    </div>
+                 </Link>
+                
             ))}
         </div>
     )
