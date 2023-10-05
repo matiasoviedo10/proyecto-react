@@ -19,32 +19,33 @@ const ListProducts = ({addToCart}) => {
     return (
         <div className='products-list'>
             {productsData.map((product) => (
-                <Link to={`/poducts/${product.id}`} className='products' key={product.id}>
-                    <img className='image-products' src={product.image} alt={product.name} />
-                    <p>{product.name}</p>
-                    
+                <div className='products' key={product.id}>
+                    <Link to={`/poducts/${product.id}`} >
+                        <img className='image-products' src={product.image} alt={product.name} />
+                        <p>{product.name}</p>
+                    </Link>
+
                     <div className="sizes-select">
-                        <label className='label-select'>
-                            <p>Sizes:</p>
-                            <select value={selectedSize} onChange={handleSizeChange}>
-                                <option value="" disabled>
-                                    Select Size
-                                </option>
-                                {product.sizes.map((size) => (
-                                    <option key={size} value={size}>
-                                        {size}
+                            <label className='label-select'>
+                                <p>Sizes:</p>
+                                <select value={selectedSize} onChange={handleSizeChange}>
+                                    <option value="" disabled>
+                                        Select Size
                                     </option>
-                                ))}
-                            </select>
-                        </label>
+                                    {product.sizes.map((size) => (
+                                        <option key={size} value={size}>
+                                            {size}
+                                        </option>
+                                    ))}
+                                </select>
+                            </label>
                     </div>
 
                     <div className="price-addCart">
                     <p>${product.price}</p>
                     <button onClick={() => handleAddToCart(product.id, selectedSize)}>Add to Cart</button>
                     </div>
-                 </Link>
-                
+                </div>
             ))}
         </div>
     )
