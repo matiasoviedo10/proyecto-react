@@ -9,7 +9,7 @@ import CarlWidget from '../carlwidget/CarlWidget';
 import SiteTitle from '../brand/sitetitle/SiteTitle';
 
 
-function NavBar({cartItems}) {
+function NavBar({quantity}) {
   const [menuVisible, setMenuVisible] = useState(false);
 
   const toggleMenu = () => {
@@ -55,7 +55,7 @@ function NavBar({cartItems}) {
       
       <div className='mi-carlwidget'>
       <Link to={'/cart'} onClick={closeMenu}>
-      <CarlWidget cartItems={cartItems}/>
+      <CarlWidget quantity={quantity}/>
       </Link>
 
       </div>

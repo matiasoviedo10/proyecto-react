@@ -1,0 +1,9 @@
+.image-product {
+    width: 100%;
+}
+
+.selected {
+    background-color: #000;  
+    color: #fff; 
+    
+}
