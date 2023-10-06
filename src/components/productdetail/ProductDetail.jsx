@@ -38,16 +38,41 @@ const ProductDetail = ({addToCart}) => {
     return (    
         <div>
             <img className='image-product' src={product.image} alt={product.name}/>
-            <h2>{product.name}</h2>
-            <span>${product.price}</span>
-            <ul>
-                {product.sizes.map((size) => (
-                    <li key={size} onClick={() => handleSizeClick(size)} className={selectedSize === size ? 'selected' : ''}>
-                        {size}
-                    </li>
+            <h2 className='product-name'>{product.name}</h2>
+            <span className='product-price'>${product.price}</span>
+
+            <div className='size-selected'>
+                <span className='ref-size'>Taglia: {selectedSize}</span>
+                <ul className='list-sizes'>
+                    {product.sizes.map((size) => (
+                        <li key={size} onClick={() => handleSizeClick(size)} className={selectedSize === size ? 'selected' : 'selected-off'}>
+                            {size}
+                        </li>
+                    ))}
+                </ul>
+            </div>
+            
+            <div className='colore-product'>
+
+            <span>
+                Colore: {product.colore.map((color, index) => (
+                    <React.Fragment key={index}>
+                        {index > 0 && ' / '}
+                        {color}
+                    </React.Fragment>
                 ))}
-            </ul>
-            <p>Colore:{product.colore}</p>
+            </span>
+            
+            <div className="colore-circle" style={{ background: product.colore.length > 1 ? `conic-gradient(${product.colore.join(', ')})` : product.colore[0] }}>
+                {product.colore.map((color, index) => (
+                    <React.Fragment key={index}>
+                    </React.Fragment>
+                ))}
+            </div>
+            
+
+            </div>
+
             <div className="quantity-selector">
                 <button onClick={decreaseQuantity}>-</button>
                 <input type="number" value={quantity} readOnly />
