@@ -771,7 +771,7 @@ export const productsData = [
         lining: "Leather",
         gender: "male",
     },
-    {
+        {
         id:28,
         image: zapato28,
         name: "LRP handcrafted men's golf shoes in white and brown leather with brogue details",
