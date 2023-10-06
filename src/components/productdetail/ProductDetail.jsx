@@ -74,12 +74,13 @@ const ProductDetail = ({addToCart}) => {
             </div>
 
             <div className="quantity-selector">
-                <button onClick={decreaseQuantity}>-</button>
-                <input type="number" value={quantity} readOnly />
-                <button onClick={increaseQuantity}>+</button>
+                <button className='button-quantity' onClick={decreaseQuantity}>-</button>
+                <input className='input-quantity' type="number" value={quantity} readOnly />
+                <button className='button-quantity' onClick={increaseQuantity}>+</button>
             </div>
-            <div>
-                <button onClick={handleAddToCart}>Add to Cart</button>
+
+            <div className='container-addToCart'>
+                <button className='addToCart-button' onClick={handleAddToCart}>Add To Cart</button>
             </div>
         </div>
     )

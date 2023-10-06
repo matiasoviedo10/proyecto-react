@@ -11,6 +11,13 @@
     color: black;
 }
 
+.product-link {
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+
 .image-products {
     width: 100%;
 }

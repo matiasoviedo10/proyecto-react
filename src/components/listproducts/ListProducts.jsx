@@ -20,7 +20,7 @@ const ListProducts = ({addToCart}) => {
         <div className='products-list'>
             {productsData.map((product) => (
                 <div className='products' key={product.id}>
-                    <Link to={`/products/${product.id}`} >
+                    <Link className='product-link' to={`/products/${product.id}`} >
                         <img className='image-products' src={product.image} alt={product.name} />
                         <p>{product.name}</p>
                     </Link>

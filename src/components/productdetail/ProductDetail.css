@@ -67,3 +67,47 @@
     margin-right: 1rem; 
     border: 1px solid #000;
 }
+
+.quantity-selector {
+    margin: 1rem;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-quantity {
+    padding: 5.4px;
+    width: 10%;
+    background-color: white;
+    border: 0.5px solid;
+    font-size: 25px;
+}
+
+.input-quantity {
+    padding: 12px;
+    width: 74%;
+    text-align: center;
+    border: 0.5px solid;
+    border-left: none;
+    border-right: none;
+}
+
+.container-addToCart {
+    margin: 2rem 1rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.addToCart-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #000;
+    color: white
+}
