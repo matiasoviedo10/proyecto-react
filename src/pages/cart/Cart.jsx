@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { getProductById } from '../../data/ProductsData';
-import CartProduct from '../../components/cartproduct/CartProduct';
 import { isValidProduct } from '../../utils/api/validationProduct';
-import './Cart.css';
 import { useCartContext } from '../../context/CartContex';
+import CartProduct from '../../components/cartproduct/CartProduct'; 
+import './Cart.css';
 
-const Cart = (/*{ productCart, onRemoveProduct }*/) => {
+const Cart = () => {
   const {productCart} = useCartContext();
   const total = productCart.reduce((acc, { productIdNumber, quantity }) => {
     const product = getProductById(productIdNumber);
@@ -25,7 +25,6 @@ const Cart = (/*{ productCart, onRemoveProduct }*/) => {
       product={getProductById(firstProduct.productIdNumber)}
       quantity={firstProduct.quantity}
       selectedSize={firstProduct.selectedSize}
-      // onRemove={onRemoveProduct}
     />
   ) : null;
 
@@ -59,7 +58,6 @@ const Cart = (/*{ productCart, onRemoveProduct }*/) => {
                       product={product}
                       quantity={quantity}
                       selectedSize={selectedSize}
-                      // onRemove={onRemoveProduct}
                     />;
                   })}
                 </ul>

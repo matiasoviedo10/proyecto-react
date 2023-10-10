@@ -4,7 +4,7 @@ import { getProductById } from '../../data/ProductsData';
 import { useCartContext } from '../../context/CartContex';
 import './ProductDetail.css'
 
-const ProductDetail = (/*{addToCart}*/) => {
+const ProductDetail = () => {
     const {addToCart} = useCartContext();
     const { productId } = useParams();
     const [quantity, setQuantity] = useState(1);

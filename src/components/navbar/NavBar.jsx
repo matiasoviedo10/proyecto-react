@@ -8,7 +8,7 @@ import SiteTitle from '../brand/sitetitle/SiteTitle';
 import './NavBar.css'
 
 
-function NavBar({quantity}) {
+function NavBar() {
   const [menuVisible, setMenuVisible] = useState(false);
 
   const toggleMenu = () => {
@@ -54,7 +54,7 @@ function NavBar({quantity}) {
       
       <div className='mi-carlwidget'>
       <Link to={'/cart'} onClick={closeMenu}>
-      <CarlWidget /*quantity={quantity}*//>
+      <CarlWidget />
       </Link>
 
       </div>
