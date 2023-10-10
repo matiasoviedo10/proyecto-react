@@ -1,9 +1,12 @@
 import React from "react";
+import { useCartContext } from "../../context/CartContex";
 import './CartProduct.css'
 
-const CartProduct = ({product, quantity, selectedSize, onRemove}) => {
+const CartProduct = ({product, quantity, selectedSize}) => {
+    const {removeFromCart} = useCartContext();
+
     const handleRemove = () => {
-        onRemove(product.id, selectedSize);
+        removeFromCart(product.id, selectedSize);
     }
 
     return(

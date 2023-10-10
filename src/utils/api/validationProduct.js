@@ -19,4 +19,4 @@ return (
     );
 }
 
-export { isValidProduct };
+export {isValidProduct} ;

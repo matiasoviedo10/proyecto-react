@@ -3,8 +3,10 @@ import { getProductById } from '../../data/ProductsData';
 import CartProduct from '../../components/cartproduct/CartProduct';
 import { isValidProduct } from '../../utils/api/validationProduct';
 import './Cart.css';
+import { useCartContext } from '../../context/CartContex';
 
-const Cart = ({ productCart, onRemoveProduct }) => {
+const Cart = (/*{ productCart, onRemoveProduct }*/) => {
+  const {productCart} = useCartContext();
   const total = productCart.reduce((acc, { productIdNumber, quantity }) => {
     const product = getProductById(productIdNumber);
     return acc + (isValidProduct(product) ? product.price * quantity : 0);
@@ -23,7 +25,7 @@ const Cart = ({ productCart, onRemoveProduct }) => {
       product={getProductById(firstProduct.productIdNumber)}
       quantity={firstProduct.quantity}
       selectedSize={firstProduct.selectedSize}
-      onRemove={onRemoveProduct}
+      // onRemove={onRemoveProduct}
     />
   ) : null;
 
@@ -57,7 +59,7 @@ const Cart = ({ productCart, onRemoveProduct }) => {
                       product={product}
                       quantity={quantity}
                       selectedSize={selectedSize}
-                      onRemove={onRemoveProduct}
+                      // onRemove={onRemoveProduct}
                     />;
                   })}
                 </ul>

@@ -1,10 +1,11 @@
-import React from 'react'
-import { useState } from 'react'
-import './ListProducts.css'
-import { productsData } from '../../data/ProductsData'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { productsData } from '../../data/ProductsData'
+import { useCartContext } from '../../context/CartContex'
+import './ListProducts.css'
 
-const ListProducts = ({addToCart}) => {
+const ListProducts = (/*{addToCart}*/) => {
+    const {addToCart} = useCartContext();
     const [selectedSize, setSelectedSize] = useState(39);
 
     const handleSizeChange = (event) => {
