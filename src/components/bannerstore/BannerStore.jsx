@@ -1,6 +1,6 @@
 import React from 'react'
-import './BannerStore.css'
 import { bannerStoreData } from '../../data/Data'
+import './BannerStore.css'
 
 const BannerStore = () => {
     return (

@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { getProductById } from '../../data/ProductsData';
-
+import { useCartContext } from '../../context/CartContex';
 import './ProductDetail.css'
 
-const ProductDetail = ({addToCart}) => {
+const ProductDetail = (/*{addToCart}*/) => {
+    const {addToCart} = useCartContext();
     const { productId } = useParams();
     const [quantity, setQuantity] = useState(1);
     const [selectedSize, setSelectedSize] = useState(39)

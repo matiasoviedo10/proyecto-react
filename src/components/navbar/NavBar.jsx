@@ -1,5 +1,3 @@
-import './NavBar.css'
-
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -7,6 +5,7 @@ import HamburgerIcon from '../hamburgericon/HamburgerIcon';
 import DiscountBadge from '../discountbadge/DiscountBadge';
 import CarlWidget from '../carlwidget/CarlWidget';
 import SiteTitle from '../brand/sitetitle/SiteTitle';
+import './NavBar.css'
 
 
 function NavBar({quantity}) {
@@ -55,7 +54,7 @@ function NavBar({quantity}) {
       
       <div className='mi-carlwidget'>
       <Link to={'/cart'} onClick={closeMenu}>
-      <CarlWidget quantity={quantity}/>
+      <CarlWidget /*quantity={quantity}*//>
       </Link>
 
       </div>

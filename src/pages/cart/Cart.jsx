@@ -1,39 +1,78 @@
-import React from 'react'
-import { getProductById } from '../../data/ProductsData'
+import React, { useState } from 'react';
+import { getProductById } from '../../data/ProductsData';
+import CartProduct from '../../components/cartproduct/CartProduct';
+import { isValidProduct } from '../../utils/api/validationProduct';
+import './Cart.css';
+import { useCartContext } from '../../context/CartContex';
 
-const CartProduct = ({product, quantity, selectedSize, onRemove}) => {
-  const handleRemove = () => {
-    onRemove(product.id, selectedSize);
-  }
-  return(
-    <li>
-      <p>{product.name}</p>
-      <p>Quantity: {quantity}</p>
-      <p>Size: {selectedSize}</p>
-      <button onClick={handleRemove}>Remove</button>
-    </li>
-  )
-}
+const Cart = (/*{ productCart, onRemoveProduct }*/) => {
+  const {productCart} = useCartContext();
+  const total = productCart.reduce((acc, { productIdNumber, quantity }) => {
+    const product = getProductById(productIdNumber);
+    return acc + (isValidProduct(product) ? product.price * quantity : 0);
+  }, 0);
 
-const Cart = ({productCart, onRemoveProduct}) => {
+  const [isAccordionOpen, setAccordionOpen] = useState(false);
+
+  const toggleAccordion = () => {
+    setAccordionOpen(!isAccordionOpen);
+  };
+
+  const firstProduct = productCart[0];
+  const firstProductComponent = firstProduct ? (
+    <CartProduct
+      key={0}
+      product={getProductById(firstProduct.productIdNumber)}
+      quantity={firstProduct.quantity}
+      selectedSize={firstProduct.selectedSize}
+      // onRemove={onRemoveProduct}
+    />
+  ) : null;
+
   return (
     <div>
-        <h1>Cart</h1>
+      <h1>Cart</h1>
+      <div>
+        <div className="accordion-header" onClick={toggleAccordion}>
+          <h2>Products added to cart</h2>
+        </div>
+        {firstProductComponent}
         {productCart.length === 0 ? (
-        <p>There are no products in the cart.</p>
+          <p>There are no products in the cart.</p>
         ) : (
-          <ul>
-          {productCart.map(({productIdNumber, quantity, selectedSize}, index) => {
-            const product = getProductById(productIdNumber);
-            if (!product) {
-              return null;
-            }
-            return <CartProduct key={index} product={product} quantity={quantity} selectedSize={selectedSize} onRemove={onRemoveProduct}/>;
-          })}
-        </ul>
-          )}
-    </div>
-  )
-}
+          isAccordionOpen && (
+            <div>
+              {productCart.length > 1 && (
+                <ul className='listproduct-cart'>
+                  {productCart.slice(1).map(({ productIdNumber, quantity, selectedSize }, index) => {
+                    const product = getProductById(productIdNumber);
 
-export default Cart
+                    if (!isValidProduct(product)) {
+                      return (
+                        <div key={index}>
+                          <p>Error: Invalid ID for Product {productIdNumber}</p>
+                        </div>
+                      );
+                    }
+                    return <CartProduct
+                      key={index + 1}
+                      product={product}
+                      quantity={quantity}
+                      selectedSize={selectedSize}
+                      // onRemove={onRemoveProduct}
+                    />;
+                  })}
+                </ul>
+              )}
+            </div>
+          )
+        )}
+        <div className="total-container">
+          <p>Total ${total.toFixed(2)}</p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Cart;

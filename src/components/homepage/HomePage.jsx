@@ -1,5 +1,5 @@
 import React from 'react'
-import homePageImg from '/Users/MatiasOviedo/Desktop/react/proyecto-react/src/assets/homepage.svg'
+import homePageImg from '../../assets/homepage.svg'
 import './HomePage.css'
 
 const HomePage = () => {

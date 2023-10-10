@@ -1,31 +1,31 @@
-import zapato1 from '/Users/MatiasOviedo/Desktop/react/proyecto-react/src/assets/imageProducts/zapato1.webp'
-import zapato2 from '/Users/MatiasOviedo/Desktop/react/proyecto-react/src/assets/imageProducts/zapato2.webp'
-import zapato3 from '/Users/MatiasOviedo/Desktop/react/proyecto-react/src/assets/imageProducts/zapato3.webp'
-import zapato4 from '/Users/MatiasOviedo/Desktop/react/proyecto-react/src/assets/imageProducts/zapato4.webp'
-import zapato5 from '/Users/MatiasOviedo/Desktop/react/proyecto-react/src/assets/imageProducts/zapato5.webp'
-import zapato6 from '/Users/MatiasOviedo/Desktop/react/proyecto-react/src/assets/imageProducts/zapato6.webp'
-import zapato7 from '/Users/MatiasOviedo/Desktop/react/proyecto-react/src/assets/imageProducts/zapato7.webp'
-import zapato8 from '/Users/MatiasOviedo/Desktop/react/proyecto-react/src/assets/imageProducts/zapato8.webp'    
-import zapato9 from '/Users/MatiasOviedo/Desktop/react/proyecto-react/src/assets/imageProducts/zapato9.webp'
-import zapato10 from '/Users/MatiasOviedo/Desktop/react/proyecto-react/src/assets/imageProducts/zapato10.webp'
-import zapato11 from '/Users/MatiasOviedo/Desktop/react/proyecto-react/src/assets/imageProducts/zapato11.webp'
-import zapato12 from '/Users/MatiasOviedo/Desktop/react/proyecto-react/src/assets/imageProducts/zapato12.webp'
-import zapato13 from '/Users/MatiasOviedo/Desktop/react/proyecto-react/src/assets/imageProducts/zapato13.webp'
-import zapato14 from '/Users/MatiasOviedo/Desktop/react/proyecto-react/src/assets/imageProducts/zapato14.webp'
-import zapato15 from '/Users/MatiasOviedo/Desktop/react/proyecto-react/src/assets/imageProducts/zapato15.webp'
-import zapato16 from '/Users/MatiasOviedo/Desktop/react/proyecto-react/src/assets/imageProducts/zapato16.webp'
-import zapato17 from '/Users/MatiasOviedo/Desktop/react/proyecto-react/src/assets/imageProducts/zapato17.webp'
-import zapato18 from '/Users/MatiasOviedo/Desktop/react/proyecto-react/src/assets/imageProducts/zapato18.webp'
-import zapato19 from '/Users/MatiasOviedo/Desktop/react/proyecto-react/src/assets/imageProducts/zapato19.webp'
-import zapato20 from '/Users/MatiasOviedo/Desktop/react/proyecto-react/src/assets/imageProducts/zapato20.webp'
-import zapato21 from '/Users/MatiasOviedo/Desktop/react/proyecto-react/src/assets/imageProducts/zapato21.webp'
-import zapato22 from '/Users/MatiasOviedo/Desktop/react/proyecto-react/src/assets/imageProducts/zapato22.webp'
-import zapato23 from '/Users/MatiasOviedo/Desktop/react/proyecto-react/src/assets/imageProducts/zapato23.webp'
-import zapato24 from '/Users/MatiasOviedo/Desktop/react/proyecto-react/src/assets/imageProducts/zapato24.webp'
-import zapato25 from '/Users/MatiasOviedo/Desktop/react/proyecto-react/src/assets/imageProducts/zapato25.webp'
-import zapato26 from '/Users/MatiasOviedo/Desktop/react/proyecto-react/src/assets/imageProducts/zapato26.webp'
-import zapato27 from '/Users/MatiasOviedo/Desktop/react/proyecto-react/src/assets/imageProducts/zapato27.webp'
-import zapato28 from '/Users/MatiasOviedo/Desktop/react/proyecto-react/src/assets/imageProducts/zapato28.webp'
+import zapato1 from '../assets/imageProducts/zapato1.webp'
+import zapato2 from '../assets/imageProducts/zapato2.webp'
+import zapato3 from '../assets/imageProducts/zapato3.webp'
+import zapato4 from '../assets/imageProducts/zapato4.webp'
+import zapato5 from '../assets/imageProducts/zapato5.webp'
+import zapato6 from '../assets/imageProducts/zapato6.webp'
+import zapato7 from '../assets/imageProducts/zapato7.webp'
+import zapato8 from '../assets/imageProducts/zapato8.webp'    
+import zapato9 from '../assets/imageProducts/zapato9.webp'
+import zapato10 from '../assets/imageProducts/zapato10.webp'
+import zapato11 from '../assets/imageProducts/zapato11.webp'
+import zapato12 from '../assets/imageProducts/zapato12.webp'
+import zapato13 from '../assets/imageProducts/zapato13.webp'
+import zapato14 from '../assets/imageProducts/zapato14.webp'
+import zapato15 from '../assets/imageProducts/zapato15.webp'
+import zapato16 from '../assets/imageProducts/zapato16.webp'
+import zapato17 from '../assets/imageProducts/zapato17.webp'
+import zapato18 from '../assets/imageProducts/zapato18.webp'
+import zapato19 from '../assets/imageProducts/zapato19.webp'
+import zapato20 from '../assets/imageProducts/zapato20.webp'
+import zapato21 from '../assets/imageProducts/zapato21.webp'
+import zapato22 from '../assets/imageProducts/zapato22.webp'
+import zapato23 from '../assets/imageProducts/zapato23.webp'
+import zapato24 from '../assets/imageProducts/zapato24.webp'
+import zapato25 from '../assets/imageProducts/zapato25.webp'
+import zapato26 from '../assets/imageProducts/zapato26.webp'
+import zapato27 from '../assets/imageProducts/zapato27.webp'
+import zapato28 from '../assets/imageProducts/zapato28.webp'
 
 export const productsData = [
     {
@@ -771,7 +771,7 @@ export const productsData = [
         lining: "Leather",
         gender: "male",
     },
-    {
+        {
         id:28,
         image: zapato28,
         name: "LRP handcrafted men's golf shoes in white and brown leather with brogue details",
